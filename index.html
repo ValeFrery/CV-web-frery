@@ -8,208 +8,342 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-
+    
+/* =========================
+   VARIABLES
+========================= */
 :root{
 --bg:#faf8f5;
 --bg2:#f5f1eb;
---card:#ffffff;
 --text:#3a3a3a;
+--muted:#777;
 --accent:#a0826d;
 --accent-strong:#8b7355;
---shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
+/* =========================
+   RESET
+========================= */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-scroll-behavior:smooth;
 }
 
 body{
 font-family:'Inter',sans-serif;
-background:linear-gradient(180deg,var(--bg),var(--bg2));
+background:var(--bg);
 color:var(--text);
-line-height:1.8;
+line-height:1.7;
+-webkit-font-smoothing:antialiased;
 }
 
+html{
+scroll-behavior:smooth;
+scroll-snap-type:y mandatory;
+}
+
+/* =========================
+   NAV (ULTRA MINIMAL SENIOR)
+========================= */
 nav{
 position:fixed;
 top:0;
 left:0;
 width:100%;
-padding:20px 8%;
+padding:18px 10%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(255,255,255,.85);
-backdrop-filter:blur(12px);
-border-bottom:1px solid rgba(0,0,0,.05);
+background:rgba(250,248,245,.75);
+backdrop-filter:blur(14px);
 z-index:1000;
 }
 
 .logo{
-font-weight:700;
+font-weight:600;
+font-size:14px;
+letter-spacing:.5px;
 color:var(--accent-strong);
 }
 
 nav ul{
 display:flex;
+gap:18px;
 list-style:none;
-gap:24px;
 }
 
 nav a{
 text-decoration:none;
-color:var(--accent-strong);
-font-weight:600;
+font-size:13px;
+color:var(--muted);
+transition:.3s;
 }
 
-.hero{
-min-height:90vh;
+nav a:hover{
+color:var(--accent-strong);
+}
+
+/* =========================
+   SECCIONES (CAPÍTULOS)
+========================= */
+section{
+min-height: auto;
+padding: 90px 10%;
 display:flex;
-align-items:center;
+flex-direction:column;
 justify-content:center;
-padding:120px 8% 60px;
+scroll-snap-align:start;
+opacity:1;
+transform:none;
+}
+
+section + section{
+padding-top:120px;
+}
+
+section:nth-child(even){
+background:var(--bg2);
+}
+
+@keyframes fadeIn{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* =========================
+   HERO (TIPO LANDING SENIOR)
+========================= */
+.hero{
+min-height:80vh;
+padding-top:120px;
+padding-bottom:80px;
 }
 
 .hero-content{
-max-width:1200px;
-width:100%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-gap:80px;
+gap:120px;
+max-width:1100px;
 }
 
 .hero-image img{
-width:380px;
+width:340px;
 height:420px;
 object-fit:cover;
-border-radius:24px;
-box-shadow:0 20px 60px rgba(0,0,0,.15);
+border-radius:16px;
+box-shadow:0 20px 50px rgba(0,0,0,.08);
 }
 
 .hero-text h1{
 font-size:4rem;
-line-height:1;
+font-weight:600;
 color:var(--accent-strong);
-margin-bottom:15px;
+line-height:1.1;
+margin-bottom:10px;
+letter-spacing:-1px;
+white-space:nowrap;
 }
 
 .hero-text h2{
-font-size:1.5rem;
+font-size:1.2rem;
 font-weight:500;
 color:var(--accent);
-margin-bottom:8px;
-}
-
-.hero-text h3{
-font-size:1.1rem;
-font-weight:400;
-color:#666;
-margin-bottom:30px;
+margin-bottom:18px;
 }
 
 .hero-subtitle{
-margin-bottom:20px;
-color:#666;
+color:var(--muted);
+margin-bottom:28px;
 font-size:1rem;
-letter-spacing:.5px;
 }
 
-.contact-buttons{
-display:flex;
-flex-wrap:wrap;
-gap:15px;
-}
-
-.contact-btn{
-padding:14px 24px;
-background:#efe6de;
-border-radius:12px;
-text-decoration:none;
-color:var(--accent-strong);
-font-weight:600;
-transition:.3s;
-}
-
-.contact-btn:hover{
-transform:translateY(-2px);
-}
-
+/* =========================
+   BOTONES SENIOR
+========================= */
 .btn{
 display:inline-block;
-padding:14px 24px;
+padding:12px 20px;
 background:var(--accent);
 color:white;
 text-decoration:none;
 border-radius:999px;
-font-weight:600;
+font-size:13px;
+transition:.3s;
 margin-right:10px;
 }
 
-section{
-padding:25px 8%;
+.btn:hover{
+transform:translateY(-2px);
 }
 
+.button-container{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:15px;
+flex-wrap:wrap;
+margin-top:20px;
+}
+
+/* =========================
+   TITULOS (CLAVE DEL LOOK)
+========================= */
 .section-title{
-font-size:2rem;
+font-size:2.4rem;
+font-weight:600;
 color:var(--accent-strong);
-margin-bottom:15px;
+margin-bottom:30px;
+letter-spacing:-1px;
 }
 
+/* =========================
+   TEXTO (SIN CAJAS)
+========================= */
 .card{
-background:white;
-padding:25px;
-border-radius:24px;
-box-shadow:var(--shadow);
+  max-width:1100px;
+  margin:0 auto;
+  background:white;
+  padding:35px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.05);
 }
 
+p{
+  font-size:1.05rem;
+  color:var(--muted);
+  margin-bottom:10px;
+  line-height:1.7;
+}
+
+/* =========================
+   TOOLS (MINIMAL TAGS)
+========================= */
 .tools{
 display:flex;
 flex-wrap:wrap;
-gap:12px;
+gap:10px;
+justify-content:center;
 }
 
 .tool{
-padding:10px 18px;
-background:#efe6de;
+padding:15px 22px;
+border:1px solid rgba(0,0,0,.08);
 border-radius:999px;
+font-size:13px;
+color:var(--muted);
 }
 
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 14px;
+}
+
+.tool-card {
+  padding: 16px;
+  border-radius: 14px;
+  background: #f7f7f7;
+
+  font-size: 15px;
+  text-align: center;
+
+  transition: 0.2s ease;
+}
+
+.tool-card:hover {
+  transform: translateY(-3px);
+  background: #ececec;
+}
+
+/* =========================
+   CONTACTO
+========================= */
+.contact-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.contact-item{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+
+  width: 220px;
+  padding: 22px;
+
+  border-radius: 18px;
+  background: #f4f1ee;
+
+  text-decoration: none;
+  color: #2b2b2b;
+
+  transition: all .3s ease;
+}
+
+.contact-item:hover{
+  transform: translateY(-5px);
+  background: #ece7e2;
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
+}
+
+.contact-item h3{
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.icon svg{
+  width: 24px;
+  height: 24px;
+}
+
+/* =========================
+   FOOTER
+========================= */
 footer{
-padding:60px 20px;
 text-align:center;
+padding:90px 20px;
+color:var(--muted);
+font-size:14px;
 }
 
+/* =========================
+   RESPONSIVE
+========================= */
 @media(max-width:900px){
 
 .hero-content{
 flex-direction:column;
 text-align:center;
-}
-
-.hero-image img{
-width:250px;
-height:250px;
+gap:50px;
 }
 
 .hero-text h1{
-font-size:2.8rem;
+font-size:2.4rem;
+white-space:normal;
 }
 
-nav{
-flex-direction:column;
-gap:15px;
+.hero-image img{
+width:260px;
+height:320px;
 }
 
 nav ul{
-flex-wrap:wrap;
-justify-content:center;
+display:none;
 }
 
+section{
+padding:100px 6%;
 }
+}    
 
 </style>
 </head>
@@ -317,15 +451,13 @@ Currículum Vitae
 Descargar o visualizar mi CV completo en formato PDF.
 </p>
 
-<br>
-
+<div class="button-container">
 <a class="btn"
 href="CV_Maria_Valentina_Frery.pdf"
 target="_blank">
-
 Ver CV completo
-
 </a>
+</div>
 
 </div>
 
@@ -366,15 +498,15 @@ Certificaciones
 Formación complementaria en análisis de datos, gestión de procesos, mejora continua, herramientas digitales y desarrollo profesional.
 </p>
 
-<br>
-
-<a class="btn"
-href="https://drive.google.com/drive/folders/1onTCOAaeb2ERGz4XtCciVeKZTOIQgN8c"
-target="_blank">
-
-Ver Certificaciones
-
-</a>
+<div class="button-container">
+  <a
+    class="btn"
+    href="https://drive.google.com/drive/folders/1onTCOAaeb2ERGz4XtCciVeKZTOIQgN8c"
+    target="_blank"
+  >
+    Ver Certificaciones
+  </a>
+</div>
 
 </div>
 
@@ -398,15 +530,15 @@ Desarrollo de Nueva Línea de Vermouth para Bodega Cinco Sentidos
 Proyecto final de Ingeniería Industrial que integró análisis comercial, evaluación económico-financiera, desarrollo de producto y diseño de procesos.
 </p>
 
-<br>
-
-<a class="btn"
-href="Sintesis Proyecto Final de Estudios.pdf"
-target="_blank">
-
-Ver síntesis del proyecto
-
-</a>
+<div class="button-container">
+  <a
+    class="btn"
+    href="Sintesis Proyecto Final de Estudios.pdf"
+    target="_blank"
+  >
+    Ver síntesis del proyecto
+  </a>
+</div>
 
 </div>
 
@@ -424,23 +556,21 @@ Detalle de Materias
 Detalle de todas las materias cursadas a lo largo de la carrera, incluyendo calificaciones con y sin aplazos.
 </p>
 
-<br>
+<div class="button-container">
 
 <a class="btn"
 href="Detalle de materias.pdf"
 target="_blank">
-
 Materias sin aplazos
-
 </a>
 
 <a class="btn"
 href="Detalle de materias con aplazos.pdf"
 target="_blank">
-
 Materias con aplazos
-
 </a>
+
+</div>
 
 </div>
 
@@ -448,40 +578,64 @@ Materias con aplazos
 
 <section id="contact">
 
-<h2 class="section-title">
-Contacto
-</h2>
+  <h2 class="section-title">
+    Contacto
+  </h2>
 
-<div class="card">
+  <div class="card">
 
-<div class="contact-buttons">
+    <div class="contact-row">
 
-<a class="contact-btn"
-href="mailto:valefrery24@gmail.com">
+      <!-- EMAIL -->
+      <a
+        class="contact-item"
+        href="mailto:valefrery24@gmail.com"
+      >
+        <div class="icon">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+        </div>
 
-📧 Envíar Email
+        <h3>Enviar Email</h3>
+      </a>
 
-</a>
+      <!-- LINKEDIN -->
+      <a
+        class="contact-item"
+        href="https://www.linkedin.com/in/maria-valentina-frery/"
+        target="_blank"
+      >
+        <div class="icon">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H12v2.3h.1c.6-1.1 2.1-2.3 4.3-2.3 4.6 0 5.5 3 5.5 6.9V24h-5v-7.6c0-1.8 0-4.2-2.6-4.2-2.6 0-3 2-3 4.1V24h-5V8z"/>
+          </svg>
+        </div>
 
-<a class="contact-btn"
-href="https://www.linkedin.com/in/maría-valentina-frery/"
-target="_blank">
+        <h3>ver LinkedIn</h3>
+      </a>
 
-💼 Ver LinkedIn
+      <!-- WHATSAPP -->
+      <a
+        class="contact-item"
+        href="https://wa.me/542615430830"
+        target="_blank"
+      >
+        <div class="icon">
+          <svg viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M20.5 3.5A11.8 11.8 0 0 0 12 0C5.4 0 0 5.4 0 12c0 2.1.6 4.2 1.7 6L0 24l6.2-1.6A12 12 0 0 0 12 24c6.6 0 12-5.4 12-12 0-3.2-1.2-6.2-3.5-8.5z"/>
+          </svg>
+        </div>
 
-</a>
+        <h3>Enviar WhatsApp</h3>
+      </a>
 
-<a class="contact-btn"
-href="https://wa.me/5492615430830"
-target="_blank">
+    </div>
 
-📱 Envíar WhatsApp
-
-</a>
-
-</div>
-
-</div>
+  </div>
 
 </section>
 
