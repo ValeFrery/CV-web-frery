@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>María Valentina Frery | Ingeniera Industrial</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--bg:#faf8f5;
+--bg2:#f5f1eb;
+--card:#ffffff;
+--text:#3a3a3a;
+--accent:#a0826d;
+--accent-strong:#8b7355;
+--shadow:0 10px 30px rgba(0,0,0,.08);
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:linear-gradient(180deg,var(--bg),var(--bg2));
+color:var(--text);
+line-height:1.8;
+}
+
+nav{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:20px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(255,255,255,.85);
+backdrop-filter:blur(12px);
+border-bottom:1px solid rgba(0,0,0,.05);
+z-index:1000;
+}
+
+.logo{
+font-weight:700;
+color:var(--accent-strong);
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:24px;
+}
+
+nav a{
+text-decoration:none;
+color:var(--accent-strong);
+font-weight:600;
+}
+
+.hero{
+min-height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:120px 8% 60px;
+}
+
+.hero-content{
+max-width:1200px;
+width:100%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:80px;
+}
+
+.hero-image img{
+width:380px;
+height:420px;
+object-fit:cover;
+border-radius:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.15);
+}
+
+.hero-text h1{
+font-size:4rem;
+line-height:1;
+color:var(--accent-strong);
+margin-bottom:15px;
+}
+
+.hero-text h2{
+font-size:1.5rem;
+font-weight:500;
+color:var(--accent);
+margin-bottom:8px;
+}
+
+.hero-text h3{
+font-size:1.1rem;
+font-weight:400;
+color:#666;
+margin-bottom:30px;
+}
+
+.hero-subtitle{
+margin-bottom:20px;
+color:#666;
+font-size:1rem;
+letter-spacing:.5px;
+}
+
+.contact-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.contact-btn{
+padding:14px 24px;
+background:#efe6de;
+border-radius:12px;
+text-decoration:none;
+color:var(--accent-strong);
+font-weight:600;
+transition:.3s;
+}
+
+.contact-btn:hover{
+transform:translateY(-2px);
+}
+
+.btn{
+display:inline-block;
+padding:14px 24px;
+background:var(--accent);
+color:white;
+text-decoration:none;
+border-radius:999px;
+font-weight:600;
+margin-right:10px;
+}
+
+section{
+padding:25px 8%;
+}
+
+.section-title{
+font-size:2rem;
+color:var(--accent-strong);
+margin-bottom:15px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:24px;
+box-shadow:var(--shadow);
+}
+
+.tools{
+display:flex;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.tool{
+padding:10px 18px;
+background:#efe6de;
+border-radius:999px;
+}
+
+footer{
+padding:60px 20px;
+text-align:center;
+}
+
+@media(max-width:900px){
+
+.hero-content{
+flex-direction:column;
+text-align:center;
+}
+
+.hero-image img{
+width:250px;
+height:250px;
+}
+
+.hero-text h1{
+font-size:2.8rem;
+}
+
+nav{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+María Valentina Frery
+</div>
+
+<ul>
+<li><a href="#about">Sobre mí</a></li>
+<li><a href="#cv">CV</a></li>
+<li><a href="#herramientas">Herramientas</a></li>
+<li><a href="#certificaciones">Certificaciones</a></li>
+<li><a href="#proyecto">Proyecto Final</a></li>
+<li><a href="#materias">Materias</a></li>
+<li><a href="#contact">Contacto</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="hero-image">
+<img src="foto-perfil.jpg" alt="María Valentina Frery">
+</div>
+
+<div class="hero-text">
+
+<h1>María Valentina Frery</h1>
+<h2>Ingeniera Industrial | Universidad Nacional de Cuyo</h2>
+
+<p style="color:#888;font-size:.95rem;margin-bottom:8px;">
+Promedio General: 8,91
+</p>
+
+<p class="hero-subtitle">
+Mejora Continua • Optimización de Procesos • Análisis de Datos
+</p>
+
+<a class="btn" href="#cv">
+Ver CV
+</a>
+
+<a class="btn" href="#contact">
+Contacto
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="about">
+
+<h2 class="section-title">
+Acerca de mí
+</h2>
+
+<div class="card">
+
+<p>
+Soy Ingeniera Industrial graduada de la Facultad de Ingeniería de la Universidad Nacional de Cuyo. Me considero una persona analítica, curiosa y comprometida, con orientación a resultados, aprendizaje continuo y trabajo en equipo.
+</p>
+
+<br>
+
+<p>
+Me interesa desarrollarme en proyectos vinculados a mejora continua, optimización de procesos, eficiencia operativa, sostenibilidad y análisis de datos, aportando una mirada integral, analítica y adaptable.
+</p>
+
+<br>
+
+<p>
+Durante mi formación académica participé en proyectos relacionados con Lean Manufacturing, rediseño de layouts productivos, medición de tiempos estándar, análisis de procesos y evaluación económica de proyectos, fortaleciendo tanto mis capacidades técnicas como mi visión sistémica de las organizaciones.
+</p>
+
+<br>
+
+<p>
+Además, practico hockey desde muy chica, una experiencia que contribuyó al desarrollo de habilidades como disciplina, compromiso, trabajo en equipo, liderazgo y adaptación a nuevos desafíos.
+</p>
+
+<br>
+
+<p>
+Actualmente busco seguir creciendo profesionalmente en entornos dinámicos e innovadores donde pueda generar impacto, aprender continuamente y aportar valor a través de la ingeniería, la mejora de procesos y la gestión eficiente de recursos.
+</p>
+
+</div>
+
+</section>
+
+<section id="cv">
+
+<h2 class="section-title">
+Currículum Vitae
+</h2>
+
+<div class="card">
+
+<p>
+Descargar o visualizar mi CV completo en formato PDF.
+</p>
+
+<br>
+
+<a class="btn"
+href="CV_Maria_Valentina_Frery.pdf"
+target="_blank">
+
+Ver CV completo
+
+</a>
+
+</div>
+
+</section>
+
+<section id="herramientas">
+
+<h2 class="section-title">
+Conocimientos y Herramientas
+</h2>
+
+<div class="card">
+
+<div class="tools">
+
+<span class="tool">📊 Excel</span>
+<span class="tool">📈 Power BI</span>
+<span class="tool">🔄 Bizagi</span>
+<span class="tool">📉 Minitab</span>
+<span class="tool">📝 Notion</span>
+<span class="tool">📋 Trello</span>
+<span class="tool">🇬🇧 Inglés B1</span>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="certificaciones">
+
+<h2 class="section-title">
+Certificaciones
+</h2>
+
+<div class="card">
+
+<p>
+Formación complementaria en análisis de datos, gestión de procesos, mejora continua, herramientas digitales y desarrollo profesional.
+</p>
+
+<br>
+
+<a class="btn"
+href="https://drive.google.com/drive/folders/1onTCOAaeb2ERGz4XtCciVeKZTOIQgN8c"
+target="_blank">
+
+Ver Certificaciones
+
+</a>
+
+</div>
+
+</section>
+
+<section id="proyecto">
+
+<h2 class="section-title">
+Proyecto Final
+</h2>
+
+<div class="card">
+
+<h3>
+Desarrollo de Nueva Línea de Vermouth para Bodega Cinco Sentidos
+</h3>
+
+<br>
+
+<p>
+Proyecto final de Ingeniería Industrial que integró análisis comercial, evaluación económico-financiera, desarrollo de producto y diseño de procesos.
+</p>
+
+<br>
+
+<a class="btn"
+href="Sintesis Proyecto Final de Estudios.pdf"
+target="_blank">
+
+Ver síntesis del proyecto
+
+</a>
+
+</div>
+
+</section>
+
+<section id="materias">
+
+<h2 class="section-title">
+Detalle de Materias
+</h2>
+
+<div class="card">
+
+<p>
+Detalle de todas las materias cursadas a lo largo de la carrera, incluyendo calificaciones con y sin aplazos.
+</p>
+
+<br>
+
+<a class="btn"
+href="Detalle de materias.pdf"
+target="_blank">
+
+Materias sin aplazos
+
+</a>
+
+<a class="btn"
+href="Detalle de materias con aplazos.pdf"
+target="_blank">
+
+Materias con aplazos
+
+</a>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 class="section-title">
+Contacto
+</h2>
+
+<div class="card">
+
+<div class="contact-buttons">
+
+<a class="contact-btn"
+href="mailto:valefrery24@gmail.com">
+
+📧 Email
+
+</a>
+
+<a class="contact-btn"
+href="https://www.linkedin.com/in/maria-valentina-frery"
+target="_blank">
+
+💼 LinkedIn
+
+</a>
+
+<a class="contact-btn"
+href="https://wa.me/5492615430830"
+target="_blank">
+
+📱 WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>Gracias por visitar mi portfolio</h3>
+
+<p>Mendoza, Argentina</p>
+
+</footer>
+
+</body>
+</html>
