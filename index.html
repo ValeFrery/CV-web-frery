@@ -161,7 +161,30 @@ margin-bottom:28px;
 font-size:1rem;
 }
 
+/* =========================
+   
+========================= */
 
+.competencias-grid{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.competencias-grid .card{
+  flex:1;
+  min-width:320px;
+  max-width:500px;
+}
+
+.sub-title{
+  text-align:center;
+  font-size:1.2rem;
+  font-weight:600;
+  color:var(--accent-strong);
+  margin-bottom:25px;
+}
 
 /* =========================
    BOTONES SENIOR
@@ -359,9 +382,9 @@ María Valentina Frery
 </div>
 
 <ul>
-<li><a href="#about">Sobre mí</a></li>
+<li><a href="#about">Acerca de mí</a></li>
 <li><a href="#cv">CV</a></li>
-<li><a href="#herramientas">Herramientas</a></li>
+<li><a href="#competencias">Competencias</a></li>
 <li><a href="#certificaciones">Certificaciones</a></li>
 <li><a href="#proyecto">Proyecto Final</a></li>
 <li><a href="#materias">Materias</a></li>
@@ -450,7 +473,7 @@ Currículum Vitae
 <div class="card">
 
 <p>
-Descargar o visualizar mi CV completo en formato PDF.
+Descargar o visualizar mi CV completo en formato PDF. En el mismo se observa mi experiencia profesional y mi educación.
 </p>
 
 <div class="button-container">
@@ -465,26 +488,46 @@ Ver CV completo
 
 </section>
 
-<section id="herramientas">
+<section id="competencias">
 
-<h2 class="section-title">
-Conocimientos y Herramientas
-</h2>
+  <h2 class="section-title">
+    Competencias
+  </h2>
 
-<div class="card">
+  <div class="competencias-grid">
 
-<div class="tools">
+    <div class="card">
+      <h3 class="sub-title">
+        Competencias Técnicas
+      </h3>
 
-<span class="tool">📊 Excel</span>
-<span class="tool">📈 Power BI</span>
-<span class="tool">🔄 Bizagi</span>
-<span class="tool">📝 Notion</span>
-<span class="tool">📋 Trello</span>
-<span class="tool">🇬🇧 Inglés B1</span>
+      <div class="tools">
+        <span class="tool">📊 Excel</span>
+        <span class="tool">📈 Power BI</span>
+        <span class="tool">🔄 Bizagi</span>
+        <span class="tool">📝 Notion</span>
+        <span class="tool">📋 Trello</span>
+        <span class="tool">🇬🇧 Inglés B1</span>
+      </div>
+    </div>
 
-</div>
+    <div class="card">
+      <h3 class="sub-title">
+        Habilidades Blandas
+      </h3>
 
-</div>
+      <div class="tools">
+        <span class="tool">🤝 Trabajo en equipo</span>
+        <span class="tool">⭐ Liderazgo</span>
+        <span class="tool">✔️ Responsabilidad</span>
+        <span class="tool">🎯 Disciplina y compromiso</span>
+        <span class="tool">⚡ Eficiencia</span>
+        <span class="tool">💡 Resolución de problemas</span>
+        <span class="tool">📅 Organización y planificación</span>
+      </div>
+    </div>
+
+  </div>
 
 </section>
 
