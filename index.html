@@ -172,13 +172,16 @@ transform:translateY(0);
   align-items: center;
 }
 
+
 .hero-image img {
-  width: 360px;
-  height: 450px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 20px 50px rgba(0,0,0,.08);
+    width: 360px;
+    height: 450px;
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.08);
 }
+
 
 /* BOTONES */
 .hero-buttons {
@@ -199,11 +202,13 @@ transform:translateY(0);
   flex-wrap:wrap;
 }
 
-.competencias-grid .card{
-  flex:1;
-  min-width:320px;
-  max-width:500px;
+
+.competencias-grid .card {
+    flex: 1 1 300px;
+    min-width: 0;
+    max-width: 500px;
 }
+
 
 .sub-title{
   text-align:center;
@@ -319,7 +324,7 @@ color:var(--muted);
   justify-content: center;
   align-items: center;
   gap: 20px;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
 }
 
 .contact-item{
@@ -367,6 +372,28 @@ color:var(--muted);
 font-size:14px;
 }
 
+
+/* Botón del menú móvil */
+.menu-toggle {
+    display: none;
+    border: none;
+    background: transparent;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 5px 0;
+    background: var(--accent-strong);
+    border-radius: 2px;
+}
+
+
+
+
 /* =========================
    RESPONSIVE
 ========================= */
@@ -388,9 +415,43 @@ width:280px;
 height:400px;
 }
 
-nav ul{
-display:none;
+
+.hero-image img {
+    width: min(280px, 75vw);
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
 }
+
+
+.menu-toggle {
+    display: block;
+}
+
+nav {
+    flex-wrap: wrap;
+}
+
+nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    flex-basis: 100%;
+    gap: 0;
+    padding-top: 12px;
+}
+
+nav ul.is-open {
+    display: flex;
+}
+
+nav a {
+    display: block;
+    padding: 10px 4px;
+    font-size: 14px;
+}
+
 
 section{
 padding:100px 6%;
@@ -400,15 +461,52 @@ padding:100px 6%;
 </style>
 </head>
 
+
+<script>
+const menuToggle = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('#nav-links');
+
+menuToggle.addEventListener('click', () => {
+    const abierto = navLinks.classList.toggle('is-open');
+
+    menuToggle.setAttribute('aria-expanded', abierto);
+    menuToggle.setAttribute(
+        'aria-label',
+        abierto ? 'Cerrar menú' : 'Abrir menú'
+    );
+});
+
+navLinks.querySelectorAll('a').forEach(enlace => {
+    enlace.addEventListener('click', () => {
+        navLinks.classList.remove('is-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú');
+    });
+});
+</script>
+</body>
+
+
+
 <body>
 
+
 <nav>
+    <div class="logo">
+        María Valentina Frery
+    </div>
 
-<div class="logo">
-María Valentina Frery
-</div>
+    <button class="menu-toggle" type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-links">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
-<ul>
+    <ul id="nav-links">
+
 <li><a href="#about">Acerca de mí</a></li>
 <li><a href="#cv">CV</a></li>
 <li><a href="#competencias">Competencias</a></li>
